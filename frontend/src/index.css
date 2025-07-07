@@ -1,0 +1,26 @@
+
+.header-ttl {
+  text-align: center;
+}
+
+.month-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  min-width: 300px;
+  width: 80%;
+  background-color: pink;
+}
+
+.result-container {
+  text-align: center;
+}
