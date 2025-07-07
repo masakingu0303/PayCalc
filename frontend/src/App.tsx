@@ -1,50 +1,61 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 import Header from './components/Header';
 import Table from './components/Table';
 import Result from './components/Result';
 
-type TableDate = {
-  date: string;    // 日付（文字列）
-  item: string;    // 品目
-  unitPrice: number; // 単価
-  quantity: number;  // 数量
-  back: number;      // バック
-  amount: number;    // 金額
+ type TableData = {
+  id?: number;
+  date: string;
+  item: string;
+  unitPrice: number;
+  quantity: number;
+  back: number;
+  amount: number;
 };
 
+const API_URL = 'http://localhost:3000/tableData/';
+
 const App: React.FC = () => {
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(new Date()); 
+  const [tableData, setTableData] = useState<TableData[]>([]);
 
-  const [tableData, setTableData] = useState<TableDate[]>([
-    {
-      date: '2025-07-06',
-      item: '写メ',
-      unitPrice: 2000,
-      quantity: 100,
-      back: 666,
-      amount: 200000,
-    },
-    {
-      date: '2025-07-07',
-      item: '写メ',
-      unitPrice: 2000,
-      quantity: 80,
-      back: 666,
-      amount: 160000,
-    },
-  ]);
+  const thisMonth = date.getMonth() + 1;
+  const thisYear = date.getFullYear();
 
 
-  const handleAdd = (formData: TableDate) => {
-    setTableData((prev) => [...prev, formData])
+  const handleChangeCalendar = (pager:string) => {
+    if(pager === 'prev') {
+      setDate(new Date(thisYear, thisMonth - 1));
+    } else if(pager === 'next') {
+     setDate(new Date(thisYear, thisMonth + 1));
+    }
   }
 
+  const fetchEvent = () => {
+    fetch(API_URL)
+      .then((res) => res.json())
+      .then((result) => setTableData(result));
+  };
 
+  useEffect(() => {
+    fetchEvent();
+  }, []);
+
+  const handleAdd = (formData: TableData) => {
+    const add = formData;
+    fetch(API_URL, {
+      body: JSON.stringify(add),
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(fetchEvent);
+  }
 
   return (
     <>
-      <Header date={date} setDate={setDate} />
+      <Header handleChangeCalendar={handleChangeCalendar} thisYear={thisYear} thisMonth={thisMonth}/>
       <Table tableData={tableData} handleAdd={handleAdd} />
       <Result />
     </>

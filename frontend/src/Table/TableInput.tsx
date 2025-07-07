@@ -1,20 +1,20 @@
 import { useState } from "react";
 
-type TableInputProps = {
-    handleAdd:  ()=> void;
-}
-
-type TableDate = {
-    date: string;    // 日付（文字列）
-    item: string;    // 品目
-    unitPrice: number; // 単価
-    quantity: number;  // 数量
-    back: number;      // バック
-    amount: number;    // 金額
+type TableData = {
+    date: string;
+    item: string;
+    unitPrice: number;
+    quantity: number;
+    back: number;
+    amount: number;
   };
 
-const TableInput:React.FC<TableInputProps> = ({handleAdd}) => {
-  const [formData, setFormData] = useState<TableDate>({
+type TableInputProps = {
+  handleAdd: (newRow: TableData) => void;
+};
+
+const TableInput: React.FC<TableInputProps> = ({ handleAdd }) => {
+  const [formData, setFormData] = useState<TableData>({
     date: "",
     item: "写メ",
     unitPrice: 2000,
@@ -27,7 +27,7 @@ const TableInput:React.FC<TableInputProps> = ({handleAdd}) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: name === "unitPrice" || name === "quantity" || name === "back" || name === "amount"
+      [name]: ["unitPrice", "quantity", "back", "amount"].includes(name)
         ? Number(value)
         : value,
     }));
@@ -36,12 +36,12 @@ const TableInput:React.FC<TableInputProps> = ({handleAdd}) => {
   const handleClick = () => {
     handleAdd(formData);
     setFormData({
-        date: "",
-        item: "写メ",
-        unitPrice: 2000,
-        quantity: 0,
-        back: 666,
-        amount: 0,
+      date: "",
+      item: "写メ",
+      unitPrice: 2000,
+      quantity: 0,
+      back: 666,
+      amount: 0,
     });
   };
 
@@ -50,7 +50,6 @@ const TableInput:React.FC<TableInputProps> = ({handleAdd}) => {
       <td>
         <input
           type="text"
-          placeholder="Date"
           name="date"
           value={formData.date}
           onChange={handleChange}
@@ -59,7 +58,6 @@ const TableInput:React.FC<TableInputProps> = ({handleAdd}) => {
       <td>
         <input
           type="text"
-          placeholder="Item"
           name="item"
           value={formData.item}
           onChange={handleChange}
@@ -67,8 +65,7 @@ const TableInput:React.FC<TableInputProps> = ({handleAdd}) => {
       </td>
       <td>
         <input
-          type="text"
-          placeholder="Unit Price"
+          type="number"
           name="unitPrice"
           value={formData.unitPrice}
           onChange={handleChange}
@@ -76,8 +73,7 @@ const TableInput:React.FC<TableInputProps> = ({handleAdd}) => {
       </td>
       <td>
         <input
-          type="text"
-          placeholder="Quantity"
+          type="number"
           name="quantity"
           value={formData.quantity}
           onChange={handleChange}
@@ -85,20 +81,14 @@ const TableInput:React.FC<TableInputProps> = ({handleAdd}) => {
       </td>
       <td>
         <input
-          type="text"
-          placeholder="Back"
+          type="number"
           name="back"
           value={formData.back}
           onChange={handleChange}
         />
       </td>
       <td>
-        <input
-          className="data-input"
-          type="button"
-          value="追加"
-          onClick={handleClick}
-        />
+        <input type="button" value="追加" onClick={handleClick} />
       </td>
     </tr>
   );
