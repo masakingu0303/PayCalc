@@ -24,3 +24,19 @@ table {
 .result-container {
   text-align: center;
 }
+
+td {
+  padding: 4px; /* 全セルの上下余白を統一 */
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px 8px;
+  font-size: 1rem;
+}
+
+input[type="button"] {
+  cursor: pointer;
+}
+
