@@ -18,12 +18,14 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh; 
+  position: relative;
 }
 
 .login-form {
   background: rgba(255, 255, 255, 0.8);
   padding: 2rem;
   border-radius: 8px;
+  z-index: 50;
 }
 
 .login-form input[type="password"] {
@@ -47,6 +49,15 @@ body {
   background-color: #0056b3;
 }
 
+.login-img {
+  position: absolute;
+  transform: translateY(-100%);
+  right: -20px;
+  top: 700px;
+  width: 400px;
+  height: auto;
+  z-index: 0;
+}
 
 .header-ttl {
   text-align: center;
@@ -197,6 +208,15 @@ input[type="button"] {
     font-size: 0.5rem;
   }
 
+  .login-form input[type="password"] {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    height: 40px;
+    width: 200px;
+  }
+
+
 
   .result-container {
     font-size: 1rem;
@@ -209,6 +229,15 @@ input[type="button"] {
   }
   .chara-img-01 {
     display: none;
+  }
+  .login-img {
+    position: absolute;
+    transform: translateY(-100%);
+    right: -20px;
+    top: 600px;
+    width: 300px;
+    height: auto;
+    z-index: 0;
   }
 }
 

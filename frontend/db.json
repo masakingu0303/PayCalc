@@ -61,16 +61,6 @@
       "income": 50616
     },
     {
-      "id": "03be",
-      "date": "2025-05-02",
-      "item": "写メ",
-      "unitPrice": 2000,
-      "quantity": 70,
-      "back": 666,
-      "amount": 140000,
-      "income": 46620
-    },
-    {
       "id": "4033",
       "date": "2025-05-03",
       "item": "写メ",
@@ -79,16 +69,6 @@
       "back": 666,
       "amount": 210000,
       "income": 69930
-    },
-    {
-      "id": "af33",
-      "date": "2025-05-05",
-      "item": "写メ",
-      "unitPrice": 2000,
-      "quantity": 82,
-      "back": 666,
-      "amount": 164000,
-      "income": 54612
     },
     {
       "id": "d0cf",
@@ -623,6 +603,86 @@
     {
       "id": "7a2c",
       "date": "2025-07-00",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 0,
+      "back": 666,
+      "amount": 0,
+      "income": 0
+    },
+    {
+      "id": "003f",
+      "date": "2025-05-01",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 22,
+      "back": 666,
+      "amount": 44000,
+      "income": 14652
+    },
+    {
+      "id": "d1ad",
+      "date": "2025-05-00",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 0,
+      "back": 666,
+      "amount": 0,
+      "income": 0
+    },
+    {
+      "id": "dee0",
+      "date": "2025-05-01",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 0,
+      "back": 666,
+      "amount": 0,
+      "income": 0
+    },
+    {
+      "id": "043c",
+      "date": "2025-05-01",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 0,
+      "back": 666,
+      "amount": 0,
+      "income": 0
+    },
+    {
+      "id": "b73a",
+      "date": "2025-05-01",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 0,
+      "back": 666,
+      "amount": 0,
+      "income": 0
+    },
+    {
+      "id": "5123",
+      "date": "2025-05-01",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 0,
+      "back": 666,
+      "amount": 0,
+      "income": 0
+    },
+    {
+      "id": "6d76",
+      "date": "2025-05-01",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 0,
+      "back": 666,
+      "amount": 0,
+      "income": 0
+    },
+    {
+      "id": "4ac9",
+      "date": "2025-05-01",
       "item": "写メ",
       "unitPrice": 2000,
       "quantity": 0,

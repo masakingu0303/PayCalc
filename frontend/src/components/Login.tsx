@@ -2,8 +2,8 @@ type LoginProps = {
     handlePas: (e: React.FormEvent<HTMLFormElement>) => void;
     pas: string;
     setPas: React.Dispatch<React.SetStateAction<string>>;
-  };
-  
+};
+
 
 const Login: React.FC<LoginProps> = ({ handlePas, pas, setPas }) => {
     return (
@@ -16,6 +16,7 @@ const Login: React.FC<LoginProps> = ({ handlePas, pas, setPas }) => {
                 />
                 <button type="submit">ログイン</button>
             </form>
+            <img className="login-img" src="../../../public/login.PNG" alt="" />
         </div>
     )
 }
