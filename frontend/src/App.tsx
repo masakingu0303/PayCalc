@@ -24,13 +24,15 @@ const App: React.FC = () => {
   const thisYear = date.getFullYear();
 
 
-  const handleChangeCalendar = (pager:string) => {
-    if(pager === 'prev') {
-      setDate(new Date(thisYear, thisMonth - 1));
-    } else if(pager === 'next') {
-     setDate(new Date(thisYear, thisMonth + 1));
+  const handleChangeCalendar = (pager: string) => {
+    const zeroBasedMonth = thisMonth - 1; 
+  
+    if (pager === 'prev') {
+      setDate(new Date(thisYear, zeroBasedMonth - 1)); // 前月
+    } else if (pager === 'next') {
+      setDate(new Date(thisYear, zeroBasedMonth + 1)); // 次月
     }
-  }
+  };
 
   const fetchEvent = () => {
     fetch(API_URL)
@@ -42,8 +44,8 @@ const App: React.FC = () => {
     fetchEvent();
   }, []);
 
-  const handleAdd = (formData: TableData) => {
-    const add = formData;
+  const handleAdd = (newRow: TableData) => {
+    const add = newRow;
     fetch(API_URL, {
       body: JSON.stringify(add),
       method: "POST",
@@ -56,7 +58,7 @@ const App: React.FC = () => {
   return (
     <>
       <Header handleChangeCalendar={handleChangeCalendar} thisYear={thisYear} thisMonth={thisMonth}/>
-      <Table tableData={tableData} handleAdd={handleAdd} />
+      <Table tableData={tableData} handleAdd={handleAdd} thisYear={thisYear} thisMonth={thisMonth}/>
       <Result />
     </>
   );

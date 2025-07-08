@@ -1,5 +1,7 @@
 type TableBodyProps = {
     tableData: TableData[];
+    thisYear: number;
+    thisMonth: number;
 };
 
 type TableData = {
@@ -11,13 +13,22 @@ type TableData = {
     amount: number;    // 金額
 };
 
-const TableBody: React.FC<TableBodyProps> = ({ tableData }) => {
+const TableBody: React.FC<TableBodyProps> = ({ tableData, thisYear, thisMonth }) => {
+
+    const filterData = tableData.filter((row) => {
+        const date = new Date(row.date);
+        return (
+            date.getFullYear() === thisYear &&
+            date.getMonth() + 1 === thisMonth
+        );
+    });
+
     return (
         <>
-            {tableData.map((row, index) => {
+            {filterData.map((row, id) => {
                 const thisDate = row.date ? new Date(row.date).getDate() : "";
                 return (
-                    <tr key={index}>
+                    <tr key={id}>
                         <td>{thisDate}</td>
                         <td>{row.item}</td>
                         <td>{row.unitPrice}</td>

@@ -14,16 +14,18 @@ type TableData = {
 type TableProps = {
   tableData: TableData[];
   handleAdd: (newRow: TableData) => void;
+  thisYear: number;
+  thisMonth: number;
 };
 
-const Table: React.FC<TableProps> = ({ tableData, handleAdd }) => {
+const Table: React.FC<TableProps> = ({ tableData, handleAdd, thisYear, thisMonth}) => {
   return (
     <div className="table-container">
       <table border={1}>
         <TableHead />
         <tbody>
-          <TableBody tableData={tableData} />
-          <TableInput handleAdd={handleAdd} />
+          <TableBody tableData={tableData} thisYear={thisYear} thisMonth={thisMonth}/>
+          <TableInput handleAdd={handleAdd} thisYear={thisYear} thisMonth={thisMonth}/>
         </tbody>
       </table>
     </div>

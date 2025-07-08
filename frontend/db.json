@@ -17,24 +17,6 @@
       "back": 666,
       "amount": 160000,
       "id": "7491"
-    },
-    {
-      "id": "f33c",
-      "date": "",
-      "item": "写メ",
-      "unitPrice": 2000,
-      "quantity": 0,
-      "back": 666,
-      "amount": 0
-    },
-    {
-      "id": "a2e5",
-      "date": "7",
-      "item": "写メ",
-      "unitPrice": 2000,
-      "quantity": 0,
-      "back": 666,
-      "amount": 0
     }
   ]
 }
