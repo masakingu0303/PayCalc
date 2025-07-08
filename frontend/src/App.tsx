@@ -12,6 +12,7 @@ import Result from './components/Result';
   quantity: number;
   back: number;
   amount: number;
+  income: number;
 };
 
 const API_URL = 'http://localhost:3000/tableData/';
@@ -55,11 +56,18 @@ const App: React.FC = () => {
     }).then(fetchEvent);
   }
 
+  const handleDelete = (id: number) => {
+    fetch(`${API_URL}${id}`, {
+      method: "DELETE",
+    }).then(fetchEvent);
+  };
+
+
   return (
     <>
       <Header handleChangeCalendar={handleChangeCalendar} thisYear={thisYear} thisMonth={thisMonth}/>
-      <Table tableData={tableData} handleAdd={handleAdd} thisYear={thisYear} thisMonth={thisMonth}/>
-      <Result />
+      <Table tableData={tableData} handleAdd={handleAdd} handleDelete={handleDelete} thisYear={thisYear} thisMonth={thisMonth}/>
+      <Result tableData={tableData} thisYear={thisYear} thisMonth={thisMonth}/>
     </>
   );
 };

@@ -1,22 +1,364 @@
 {
   "tableData": [
     {
-      "date": "2025-07-06",
+      "id": "4564",
+      "date": "2025-07-02",
       "item": "写メ",
       "unitPrice": 2000,
       "quantity": 100,
       "back": 666,
       "amount": 200000,
-      "id": "3c42"
+      "income": 66600
     },
     {
-      "date": "2025-07-07",
+      "id": "9b9b",
+      "date": "2025-05-18",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 95,
+      "back": 666,
+      "amount": 190000,
+      "income": 63270
+    },
+    {
+      "id": "07aa",
+      "date": "2025-05-29",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 63,
+      "back": 666,
+      "amount": 126000,
+      "income": 41958
+    },
+    {
+      "id": "4142",
+      "date": "2025-05-21",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 71,
+      "back": 666,
+      "amount": 142000,
+      "income": 47286
+    },
+    {
+      "id": "f31f",
+      "date": "2025-05-15",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 67,
+      "back": 666,
+      "amount": 134000,
+      "income": 44622
+    },
+    {
+      "id": "dbe8",
+      "date": "2025-05-10",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 83,
+      "back": 666,
+      "amount": 166000,
+      "income": 55278
+    },
+    {
+      "id": "298e",
+      "date": "2025-05-11",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 76,
+      "back": 666,
+      "amount": 152000,
+      "income": 50616
+    },
+    {
+      "id": "03be",
+      "date": "2025-05-02",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 70,
+      "back": 666,
+      "amount": 140000,
+      "income": 46620
+    },
+    {
+      "id": "4033",
+      "date": "2025-05-03",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 105,
+      "back": 666,
+      "amount": 210000,
+      "income": 69930
+    },
+    {
+      "id": "af33",
+      "date": "2025-05-05",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 82,
+      "back": 666,
+      "amount": 164000,
+      "income": 54612
+    },
+    {
+      "id": "d0cf",
+      "date": "2025-06-25",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 0,
+      "back": 666,
+      "amount": 0,
+      "income": 0
+    },
+    {
+      "id": "7a34",
+      "date": "2025-06-21",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 91,
+      "back": 666,
+      "amount": 182000,
+      "income": 60606
+    },
+    {
+      "id": "982c",
+      "date": "2025-06-12",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 75,
+      "back": 666,
+      "amount": 150000,
+      "income": 49950
+    },
+    {
+      "id": "61bd",
+      "date": "2025-06-08",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 100,
+      "back": 666,
+      "amount": 200000,
+      "income": 66600
+    },
+    {
+      "id": "74c5",
+      "date": "2025-06-15",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 100,
+      "back": 666,
+      "amount": 200000,
+      "income": 66600
+    },
+    {
+      "id": "b1c8",
+      "date": "2025-06-19",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 70,
+      "back": 666,
+      "amount": 140000,
+      "income": 46620
+    },
+    {
+      "id": "8dee",
+      "date": "2025-06-22",
+      "item": "シーシャ",
+      "unitPrice": 2000,
+      "quantity": 100,
+      "back": 666,
+      "amount": 200000,
+      "income": 66600
+    },
+    {
+      "id": "52cf",
+      "date": "2025-06-NaN",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 0,
+      "back": 666,
+      "amount": 0,
+      "income": 0
+    },
+    {
+      "id": "5670",
+      "date": "2025-06-NaN",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 0,
+      "back": 666,
+      "amount": 0,
+      "income": 0
+    },
+    {
+      "id": "a828",
+      "date": "2025-06-29",
+      "item": "まだ",
+      "unitPrice": 2000,
+      "quantity": 70,
+      "back": 666,
+      "amount": 140000,
+      "income": 46620
+    },
+    {
+      "id": "be38",
+      "date": "2024-12-19",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 94,
+      "back": 666,
+      "amount": 188000,
+      "income": 62604
+    },
+    {
+      "id": "c44e",
+      "date": "2024-12-28",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 111,
+      "back": 666,
+      "amount": 222000,
+      "income": 73926
+    },
+    {
+      "id": "f554",
+      "date": "2024-12-25",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 102,
+      "back": 666,
+      "amount": 204000,
+      "income": 67932
+    },
+    {
+      "id": "4673",
+      "date": "2024-12-21",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 83,
+      "back": 666,
+      "amount": 166000,
+      "income": 55278
+    },
+    {
+      "id": "20ad",
+      "date": "2024-12-15",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 73,
+      "back": 666,
+      "amount": 146000,
+      "income": 48618
+    },
+    {
+      "id": "1741",
+      "date": "2024-12-11",
       "item": "写メ",
       "unitPrice": 2000,
       "quantity": 80,
       "back": 666,
       "amount": 160000,
-      "id": "7491"
+      "income": 53280
+    },
+    {
+      "id": "353a",
+      "date": "2024-12-01",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 112,
+      "back": 666,
+      "amount": 224000,
+      "income": 74592
+    },
+    {
+      "id": "277c",
+      "date": "2024-12-02",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 81,
+      "back": 666,
+      "amount": 162000,
+      "income": 53946
+    },
+    {
+      "id": "5570",
+      "date": "2024-12-05",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 89,
+      "back": 666,
+      "amount": 178000,
+      "income": 59274
+    },
+    {
+      "id": "2731",
+      "date": "2025-07-05",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 80,
+      "back": 666,
+      "amount": 160000,
+      "income": 53280
+    },
+    {
+      "id": "a70a",
+      "date": "2025-07-11",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 111,
+      "back": 666,
+      "amount": 222000,
+      "income": 73926
+    },
+    {
+      "id": "d4ed",
+      "date": "2025-07-15",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 98,
+      "back": 666,
+      "amount": 196000,
+      "income": 65268
+    },
+    {
+      "id": "fc67",
+      "date": "2025-07-21",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 99,
+      "back": 666,
+      "amount": 198000,
+      "income": 65934
+    },
+    {
+      "id": "5ec4",
+      "date": "2025-07-24",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 87,
+      "back": 666,
+      "amount": 174000,
+      "income": 57942
+    },
+    {
+      "id": "69ab",
+      "date": "2025-07-28",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 120,
+      "back": 666,
+      "amount": 240000,
+      "income": 79920
+    },
+    {
+      "id": "8851",
+      "date": "2025-07-12",
+      "item": "写メ",
+      "unitPrice": 2000,
+      "quantity": 70,
+      "back": 666,
+      "amount": 140000,
+      "income": 46620
     }
   ]
 }

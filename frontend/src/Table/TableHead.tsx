@@ -8,6 +8,7 @@ const TableHead = () => {
             <th>数量</th>
             <th>バック</th>
             <th>金額</th>
+            <th>収益</th>
         </tr>
     </thead>
     )

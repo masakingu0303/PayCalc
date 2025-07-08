@@ -1,12 +1,14 @@
 import { useState } from "react";
 
 type TableData = {
+    id?: number;
     date: string;
     item: string;
     unitPrice: number;
     quantity: number;
     back: number;
     amount: number;
+    income: number;
 };
 
 type TableInputProps = {
@@ -30,12 +32,10 @@ const TableInput: React.FC<TableInputProps> = ({handleAdd,  thisYear, thisMonth 
         const { name, value } = e.target;
         setFormData((prev) => ({
             ...prev,
-            [name]: ["unitPrice", "quantity", "back", "day"].includes(name)
+            [name]: ["day","unitPrice", "quantity", "back"].includes(name)
                 ? Number(value)
                 : value,
         }));
-
-        // console.log(formData);
     };
 
     const handleClick = () => {
@@ -45,6 +45,7 @@ const TableInput: React.FC<TableInputProps> = ({handleAdd,  thisYear, thisMonth 
         const newDate = `${paddedYear}-${paddedMonth}-${paddedDay}`
 
         const newAmount = formData.unitPrice * formData.quantity;
+        const newIncome = formData.quantity * formData.back;
 
         const newRow: TableData = {
             date: newDate,
@@ -53,28 +54,25 @@ const TableInput: React.FC<TableInputProps> = ({handleAdd,  thisYear, thisMonth 
             quantity: formData.quantity,
             back: formData.back,
             amount: newAmount,
+            income: newIncome,
         };
-
-        console.log(newRow);
-        
-
         handleAdd(newRow);
 
-        // 初期化
-        // setFormData({
-        //     day: 1,
-        //     item: "写メ",
-        //     unitPrice: 2000,
-        //     quantity: 0,
-        //     back: 666,
-        // });
+      
+        setFormData({
+            day: 1,
+            item: "写メ",
+            unitPrice: 2000,
+            quantity: 0,
+            back: 666,
+        });
     };
 
     return (
         <tr>
             <td>
                 <input
-                    type="number"
+                    type="text"
                     name="day"
                     value={formData.day}
                     onChange={handleChange}
@@ -91,7 +89,7 @@ const TableInput: React.FC<TableInputProps> = ({handleAdd,  thisYear, thisMonth 
             </td>
             <td>
                 <input
-                    type="number"
+                    type="text"
                     name="unitPrice"
                     value={formData.unitPrice}
                     onChange={handleChange}
@@ -99,7 +97,7 @@ const TableInput: React.FC<TableInputProps> = ({handleAdd,  thisYear, thisMonth 
             </td>
             <td>
                 <input
-                    type="number"
+                    type="text"
                     name="quantity"
                     value={formData.quantity}
                     onChange={handleChange}
@@ -107,13 +105,14 @@ const TableInput: React.FC<TableInputProps> = ({handleAdd,  thisYear, thisMonth 
             </td>
             <td>
                 <input
-                    type="number"
+                    type="text"
                     name="back"
                     value={formData.back}
                     onChange={handleChange}
                 />
             </td>
-            <td>{formData.unitPrice * formData.quantity}</td>
+            <td>{(formData.unitPrice * formData.quantity).toLocaleString()}</td>
+            <td>{(formData.quantity * formData.back).toLocaleString()}</td>
             <td>
                 <input type="button" value="追加" onClick={handleClick} />
             </td>
