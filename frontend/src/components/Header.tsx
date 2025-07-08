@@ -1,5 +1,3 @@
-import { FaGithub } from "react-icons/fa"
-
 type HeaderProps = {
   handleChangeCalendar: (pager: string) => void,
   thisYear: number,
@@ -19,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ handleChangeCalendar, thisYear, thisMon
         <button onClick={() => handleChangeCalendar('next')}>次の月</button>
       </div>
       <img className="chara-img" src="../../../public/chara.PNG" alt="" />
-        <img className="chara-img-01" src="../../../public/chara01.PNG" alt="" />
+      <img className="chara-img-01" src="../../../public/chara01.PNG" alt="" />
     </div>
   );
 };
