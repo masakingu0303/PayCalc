@@ -28,8 +28,8 @@ const Table: React.FC<TableProps> = ({ tableData, handleAdd, handleDelete, thisY
       <table border={1}>
         <TableHead />
         <tbody>
-          <TableBody tableData={tableData} handleDelete={handleDelete} thisYear={thisYear} thisMonth={thisMonth}/>
           <TableInput handleAdd={handleAdd} thisYear={thisYear} thisMonth={thisMonth}/>
+          <TableBody tableData={tableData} handleDelete={handleDelete} thisYear={thisYear} thisMonth={thisMonth}/>
         </tbody>
       </table>
     </div>

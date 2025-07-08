@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { VscAdd  } from "react-icons/vsc";
 
 type TableData = {
     id?: number;
@@ -17,10 +18,10 @@ type TableInputProps = {
     thisMonth: number;
 };
 
-const TableInput: React.FC<TableInputProps> = ({handleAdd,  thisYear, thisMonth }) => {
+const TableInput: React.FC<TableInputProps> = ({ handleAdd, thisYear, thisMonth }) => {
 
     const [formData, setFormData] = useState({
-        day: 1,
+        day: 0,
         item: "写メ",
         unitPrice: 2000,
         quantity: 0,
@@ -32,7 +33,7 @@ const TableInput: React.FC<TableInputProps> = ({handleAdd,  thisYear, thisMonth 
         const { name, value } = e.target;
         setFormData((prev) => ({
             ...prev,
-            [name]: ["day","unitPrice", "quantity", "back"].includes(name)
+            [name]: ["day", "unitPrice", "quantity", "back"].includes(name)
                 ? Number(value)
                 : value,
         }));
@@ -58,9 +59,9 @@ const TableInput: React.FC<TableInputProps> = ({handleAdd,  thisYear, thisMonth 
         };
         handleAdd(newRow);
 
-      
+
         setFormData({
-            day: 1,
+            day: 0,
             item: "写メ",
             unitPrice: 2000,
             quantity: 0,
@@ -114,7 +115,13 @@ const TableInput: React.FC<TableInputProps> = ({handleAdd,  thisYear, thisMonth 
             <td>{(formData.unitPrice * formData.quantity).toLocaleString()}</td>
             <td>{(formData.quantity * formData.back).toLocaleString()}</td>
             <td>
-                <input type="button" value="追加" onClick={handleClick} />
+                <button
+                    type="button"
+                    onClick={handleClick}
+                    className="row-button"
+                >
+                    <VscAdd size={25} color="#333" />
+                </button>
             </td>
         </tr>
     );

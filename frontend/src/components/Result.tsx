@@ -42,8 +42,8 @@ const Result: React.FC<ResultProps> = ({ tableData, thisYear, thisMonth}) => {
 
     return (
         <div className="result-container">
-            <p>売上合計{amountSum.toLocaleString()}円</p>
-            <p>収益合計{incomeSum.toLocaleString()}円</p>
+            <h3>売上合計{amountSum.toLocaleString()}円</h3>
+            <h3>収益合計{incomeSum.toLocaleString()}円</h3>
         </div>
     )
 }

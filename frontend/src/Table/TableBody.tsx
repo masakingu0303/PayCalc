@@ -1,3 +1,5 @@
+import { VscArchive  } from "react-icons/vsc"
+
 type TableBodyProps = {
     tableData: TableData[];
     thisYear: number;
@@ -26,9 +28,9 @@ const TableBody: React.FC<TableBodyProps> = ({ tableData, handleDelete, thisYear
             date.getMonth() + 1 === thisMonth
         );
     })
-    .sort((a, b) => {
-        return new Date(a.date).getTime() - new Date(b.date).getTime();
-    });
+        .sort((a, b) => {
+            return new Date(a.date).getTime() - new Date(b.date).getTime();
+        });
 
     return (
         <>
@@ -44,10 +46,12 @@ const TableBody: React.FC<TableBodyProps> = ({ tableData, handleDelete, thisYear
                         <td>{(row.amount ?? 0).toLocaleString()}</td>
                         <td>{(row.income ?? 0).toLocaleString()}</td>
                         <td>
-                            <input
-                                type="button"
-                                value="削除"
-                                onClick={() => row.id && handleDelete(row.id)} />
+                            <button
+                                onClick={() => row.id && handleDelete(row.id)}
+                                className="row-button"
+                            >
+                                <VscArchive size={25} color="#333" />
+                            </button>
                         </td>
                     </tr>
                 );
