@@ -16,8 +16,8 @@ const Header: React.FC<HeaderProps> = ({ handleChangeCalendar, thisYear, thisMon
         <h2>{thisMonth}月の臨時収入</h2>
         <button onClick={() => handleChangeCalendar('next')}>次の月</button>
       </div>
-      <img className="chara-img" src="../../../public/chara.PNG" alt="" />
-      <img className="chara-img-01" src="../../../public/chara01.PNG" alt="" />
+      <img className="chara-img" src="/chara.PNG" alt="" />
+      <img className="chara-img-01" src="/chara01.PNG" alt="" />
     </div>
   );
 };

@@ -8,7 +8,7 @@ type TableData = {
     id?: number;
     date: string;
     item: string;
-    unitPrice: number;
+    unitprice: number;
     quantity: number;
     back: number;
     amount: number;

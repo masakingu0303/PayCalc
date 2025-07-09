@@ -1,4 +1,4 @@
-import { VscArchive  } from "react-icons/vsc"
+import { VscArchive } from "react-icons/vsc"
 
 type TableBodyProps = {
     tableData: TableData[];
@@ -12,7 +12,7 @@ type TableData = {
     id?: number;
     date: string;    // 日付（文字列）
     item: string;    // 品目
-    unitPrice: number; // 単価
+    unitprice: number; // 単価
     quantity: number;  // 数量
     back: number;      // バック
     amount: number;    // 金額
@@ -36,15 +36,17 @@ const TableBody: React.FC<TableBodyProps> = ({ tableData, handleDelete, thisYear
         <>
             {filterData.map((row, id) => {
                 const thisDate = row.date ? new Date(row.date).getDate() : "";
+                
+                
                 return (
                     <tr key={id}>
                         <td>{thisDate}</td>
                         <td>{row.item}</td>
-                        <td>{row.unitPrice.toLocaleString()}</td>
+                        <td>{row.unitprice !== undefined ? row.amount.toLocaleString() : '_'}</td>
                         <td>{row.quantity}</td>
                         <td>{row.back}</td>
-                        <td>{(row.amount ?? 0).toLocaleString()}</td>
-                        <td>{(row.income ?? 0).toLocaleString()}</td>
+                        <td>{row.amount !== undefined ? row.amount.toLocaleString() : '-'}</td>
+                        <td>{row.income !== undefined ? row.income.toLocaleString() : '-'}</td>
                         <td>
                             <button
                                 onClick={() => row.id && handleDelete(row.id)}

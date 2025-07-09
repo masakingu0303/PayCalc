@@ -1,5 +1,7 @@
 # 物販売上管理
 
+[![Watch the video](https://img.youtube.com/vi/cFmJQRyrr3Q/maxresdefault.jpg)](https://youtu.be/cFmJQRyrr3Q)
+
 ##  機能説明
 １件ごとに品目,単価,数量,バック,金額(税込み)の項目があり入力する　
 金額=単価×数量

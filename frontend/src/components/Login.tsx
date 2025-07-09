@@ -16,7 +16,7 @@ const Login: React.FC<LoginProps> = ({ handlePas, pas, setPas }) => {
                 />
                 <button type="submit">ログイン</button>
             </form>
-            <img className="login-img" src="../../../public/login.PNG" alt="" />
+            <img className="login-img" src="/login.PNG" alt="" />
         </div>
     )
 }

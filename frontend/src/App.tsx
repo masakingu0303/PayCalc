@@ -7,17 +7,18 @@ import Result from './components/Result';
 import Logout from './components/Logout';
 
 type TableData = {
-  id?: number;
+  id?: number; 
   date: string;
   item: string;
-  unitPrice: number;
+  unitprice: number;
   quantity: number;
   back: number;
   amount: number;
   income: number;
 };
 
-const API_URL = 'http://localhost:3000/tableData/';
+// ✅ サーバーに合わせる！
+const API_URL = 'http://localhost:3000/';
 
 const App: React.FC = () => {
 
@@ -32,13 +33,11 @@ const App: React.FC = () => {
     setPas("")
   };
 
-
   const [date, setDate] = useState(new Date());
   const [tableData, setTableData] = useState<TableData[]>([]);
 
   const thisMonth = date.getMonth() + 1;
   const thisYear = date.getFullYear();
-
 
   const handleChangeCalendar = (pager: string) => {
     const zeroBasedMonth = thisMonth - 1;
@@ -53,30 +52,31 @@ const App: React.FC = () => {
   const fetchEvent = () => {
     fetch(API_URL)
       .then((res) => res.json())
-      .then((result) => setTableData(result));
+      .then((result) => {
+        setTableData(result);
+      });
   };
 
   useEffect(() => {
     fetchEvent();
   }, []);
 
-  const handleAdd = (newRow: TableData) => {
-    const add = newRow;
-    fetch(API_URL, {
-      body: JSON.stringify(add),
+  const handleAdd = (newRow: Omit<TableData, 'id'>) => {
+    fetch(`${API_URL}table`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
-      }
-    }).then(fetchEvent);
-  }
-
-  const handleDelete = (id: number) => {
-    fetch(`${API_URL}${id}`, {
-      method: "DELETE",
+      },
+      body: JSON.stringify(newRow),
     }).then(fetchEvent);
   };
 
+
+  const handleDelete = (id: number) => {
+    fetch(`${API_URL}table/${id}`, {
+      method: "DELETE",
+    }).then(fetchEvent);
+  };
 
   return (
     <>
@@ -92,7 +92,6 @@ const App: React.FC = () => {
       )}
     </>
   );
-
 };
 
 export default App;
