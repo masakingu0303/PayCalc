@@ -1,6 +1,6 @@
 # 物販売上管理
 
-[![Watch the video](https://img.youtube.com/vi/cFmJQRyrr3Q/maxresdefault.jpg)](https://youtu.be/8MJRa5FfKM)
+[![Watch the video](https://img.youtube.com/vi/8MJRa5FfKrM/maxresdefault.jpg)](https://youtu.be/8MJRa5FfKrM)
 
 
 ##  機能説明
