@@ -38,7 +38,6 @@ app.get('/', (req, res) => {
 
 app.post('/table', (req, res) => {
   const { date, item, unitprice, quantity, back, amount, income } = req.body;
-  console.log(req.body);
   const sql = `
     INSERT INTO table_data 
       (date, item, unitprice, quantity, back, amount, income)
